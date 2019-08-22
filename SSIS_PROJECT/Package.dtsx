@@ -1,0 +1,1370 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/21/2019 5:17:32 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HOME-DESKTOP"
+  DTS:CreatorName="HOME-DESKTOP\Admin"
+  DTS:DTSID="{1EF1BE7B-6BB2-4679-A0EF-ED61456A7CEA}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{E0CB0339-DA77-4239-A3B7-E3D8C2C3B4E6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[conversion error output]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{EE8E9580-724E-46D0-AC9C-8D81439332B8}"
+      DTS:ObjectName="conversion error output">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\MSBI\SSIS_PROJECT\conv error output.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustomerCode"
+              DTS:DTSID="{8496BE83-F565-4113-BBD7-C3FD3BFCC086}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustomerName"
+              DTS:DTSID="{6A636214-7818-4E79-B2A7-8265F4ADC37F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesDate"
+              DTS:DTSID="{A85AFADB-97B6-44D9-B7EE-EF0D0515898F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustomerAmount"
+              DTS:DTSID="{AD203736-3791-43F3-AEF3-F0E54BF3138F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UpperCaseNameConversion"
+              DTS:DTSID="{A6452926-C443-421E-9ABB-C2D2F8247CA3}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[csv connection]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="connection to flat file"
+      DTS:DTSID="{D82342EE-937E-4181-8A3E-DFCE1A11C1D6}"
+      DTS:ObjectName="csv connection">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FullFilePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustomerCode"
+              DTS:DTSID="{2397E0BC-D60F-4DB5-A42D-A818E6B05F92}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustomerName"
+              DTS:DTSID="{9DB834E2-0CF5-4869-AF4F-44EFBE27319D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustomerAmount"
+              DTS:DTSID="{25CAD708-7A75-4804-83DF-DF71C1BAAB9C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesDate"
+              DTS:DTSID="{63E9B471-BC4F-4581-850F-CBC22284E76D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ERROR FILE CONNECTION mgr]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B6B320B3-F4CA-4FD3-BFD8-E26D168BB79D}"
+      DTS:ObjectName="ERROR FILE CONNECTION mgr">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\MSBI\SSIS_PROJECT\ERROR.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustomerCode"
+              DTS:DTSID="{39C37997-523A-4A6D-80C1-9D169C7CCAEB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustomerName"
+              DTS:DTSID="{0A500F32-F13F-4D11-B3DB-F7ECAED42217}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesDate"
+              DTS:DTSID="{DEAEFC0A-C81D-466D-A637-9DB31B343364}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustomerAmount"
+              DTS:DTSID="{9B4A57EE-1BBC-43BD-9242-79424796871F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UpperCaseNameConversion"
+              DTS:DTSID="{F7415E1C-8614-41E1-84D5-495D8EDD1384}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{7E83027A-7A34-4269-B8F4-DCD2EA1704E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{D0D0A2F6-F9CC-497B-A7ED-8292467094CB}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[HOME-DESKTOP.CustomerDataWareHouse]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{F857ECFA-19B9-4CD5-8152-6CE2D9A72858}"
+      DTS:ObjectName="HOME-DESKTOP.CustomerDataWareHouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=HOME-DESKTOP;Initial Catalog=CustomerDataWareHouse;Integrated Security=True;Application Name=SSIS-Package-{F857ECFA-19B9-4CD5-8152-6CE2D9A72858}HOME-DESKTOP.CustomerDataWareHouse;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6D287A4C-DE17-4DB4-B1C0-7C9F75EC95EB}"
+      DTS:EvaluateAsExpression="True"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FullFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{C71D3F21-3C62-4665-A8A6-0C7DBD3D9651}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{068151D9-C4D9-4170-B6A9-CFA989342B98}"
+        DTS:ObjectName="{068151D9-C4D9-4170-B6A9-CFA989342B98}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\MSBI" />
+            <FEFEProperty
+              FileSpec="*.txt" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{C765B9E2-CC19-4D47-B89C-8DC46230FF4A}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+                  name="ADO NET Destination"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The Destination database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."tblCustomer"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                      expressionType="Notify"
+                      name="BatchSize">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                      expressionType="Notify"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                      expressionType="Notify"
+                      name="UseBulkInsertWhenPossible">true</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[HOME-DESKTOP.CustomerDataWareHouse]"
+                      connectionManagerRefId="Package.ConnectionManagers[HOME-DESKTOP.CustomerDataWareHouse]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input]"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="ADO NET Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[CustomerCode]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustomerCode"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CustomerCode]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerCode]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[SalesDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SalesDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SalesDate]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[SalesDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[CustomerAmountCY]"
+                          cachedDataType="cy"
+                          cachedName="CustomerAmountCY"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CustomerAmount]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Outputs[Data Conversion Output].Columns[CustomerAmountCY]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[UpperCaseNameConversion]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="UpperCaseNameConversion"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CustomerName]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Outputs[Derived Column Output].Columns[UpperCaseNameConversion]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CustomerCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="CustomerCode" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CustomerName]"
+                          dataType="wstr"
+                          length="50"
+                          name="CustomerName" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CustomerAmount]"
+                          dataType="numeric"
+                          name="CustomerAmount"
+                          precision="19"
+                          scale="255" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SalesDate]"
+                          dataType="dbTimeStamp"
+                          name="SalesDate" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ADO NET Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="CAPITAL CASE"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Inputs[Derived Column Input].Columns[CustomerName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustomerName"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerName]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Outputs[Derived Column Output].Columns[UpperCaseNameConversion]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Outputs[Derived Column Output].Columns[UpperCaseNameConversion]"
+                          name="UpperCaseNameConversion"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[UPPER](#{Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerName]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">UPPER(CustomerName)</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Conditional Split"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Conditional Split"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Inputs[Conditional Split Input].Columns[CustomerAmountCY]"
+                          cachedDataType="cy"
+                          cachedName="CustomerAmountCY"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Outputs[Data Conversion Output].Columns[CustomerAmountCY]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[ERROR AMOUNTS]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      exclusionGroup="1"
+                      name="ERROR AMOUNTS"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">#{Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Outputs[Data Conversion Output].Columns[CustomerAmountCY]} &lt; 0 || #{Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Outputs[Data Conversion Output].Columns[CustomerAmountCY]} == 0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">CustomerAmountCY &lt; 0 || CustomerAmountCY == 0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="CUSTOMER AMOUNT CONVERSION"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Inputs[Data Conversion Input].Columns[CustomerAmount]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustomerAmount"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerAmount]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Outputs[Data Conversion Output].Columns[CustomerAmountCY]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Outputs[Data Conversion Output].Columns[CustomerAmountCY]"
+                          name="CustomerAmountCY"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerAmount]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="1033"
+                  name="ERROR DESTINATION">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[ERROR FILE CONNECTION mgr]"
+                      connectionManagerRefId="Package.ConnectionManagers[ERROR FILE CONNECTION mgr]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].Columns[CustomerCode]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustomerCode"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].ExternalColumns[CustomerCode]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerCode]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].Columns[CustomerName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustomerName"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].ExternalColumns[CustomerName]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerName]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].Columns[CustomerAmount]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustomerAmount"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].ExternalColumns[CustomerAmount]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerAmount]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].Columns[SalesDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SalesDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].ExternalColumns[SalesDate]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[SalesDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].Columns[UpperCaseNameConversion]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="UpperCaseNameConversion"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].ExternalColumns[UpperCaseNameConversion]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Outputs[Derived Column Output].Columns[UpperCaseNameConversion]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].ExternalColumns[CustomerCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CustomerCode" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].ExternalColumns[CustomerName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CustomerName" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].ExternalColumns[CustomerAmount]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CustomerAmount" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].ExternalColumns[SalesDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SalesDate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].ExternalColumns[UpperCaseNameConversion]"
+                          dataType="wstr"
+                          length="50"
+                          name="UpperCaseNameConversion" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                          dataType="i4"
+                          name="ErrorCode" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                          dataType="i4"
+                          name="ErrorColumn" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="1033"
+                  name="Flat File Destination">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[conversion error output]"
+                      connectionManagerRefId="Package.ConnectionManagers[conversion error output]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[CustomerCode]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustomerCode"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CustomerCode]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerCode]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[SalesDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SalesDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SalesDate]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[SalesDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[CustomerAmount]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustomerAmount"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CustomerAmount]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerAmount]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[CustomerName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustomerName"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[UpperCaseNameConversion]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerName]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[UpperCaseNameConversion]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="UpperCaseNameConversion"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CustomerName]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Outputs[Derived Column Output].Columns[UpperCaseNameConversion]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CustomerCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CustomerCode" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CustomerName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CustomerName" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SalesDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SalesDate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CustomerAmount]"
+                          dataType="cy"
+                          name="CustomerAmount" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[UpperCaseNameConversion]"
+                          dataType="wstr"
+                          length="50"
+                          name="UpperCaseNameConversion" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="READ FROM CSV"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[csv connection]"
+                      connectionManagerRefId="Package.ConnectionManagers[csv connection]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerCode]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].ExternalColumns[CustomerCode]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerCode]"
+                          name="CustomerCode"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].ExternalColumns[CustomerName]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerName]"
+                          name="CustomerName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[SalesDate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].ExternalColumns[SalesDate]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[SalesDate]"
+                          name="SalesDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerAmount]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].ExternalColumns[CustomerAmount]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].Columns[CustomerAmount]"
+                          name="CustomerAmount"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].ExternalColumns[CustomerCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CustomerCode" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].ExternalColumns[CustomerName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CustomerName" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].ExternalColumns[CustomerAmount]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CustomerAmount" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output].ExternalColumns[SalesDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SalesDate" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Conditional Split Default Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input]"
+                  name="Conditional Split Default Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[Conditional Split Default Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Data Conversion Error Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+                  name="Data Conversion Error Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Outputs[Data Conversion Error Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Data Conversion Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Derived Column Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION.Inputs[Data Conversion Input]"
+                  name="Derived Column Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[ERROR AMOUNTS]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION.Inputs[Flat File Destination Input]"
+                  name="ERROR AMOUNTS"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[ERROR AMOUNTS]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{1CA8B618-03FC-4CDD-8A8E-23740E7FD2E5}"
+          DTS:ObjectName="{1CA8B618-03FC-4CDD-8A8E-23740E7FD2E5}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FullFilePath" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Foreach Loop Container\Data Flow Task"
+          TopLeft="91.5,34.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="362,137"
+          Size="362,180"
+          Id="Package\Foreach Loop Container"
+          TopLeft="370,144" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Conditional Split"
+          TopLeft="712,403" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\ERROR DESTINATION"
+          TopLeft="1001,586" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\CUSTOMER AMOUNT CONVERSION"
+          TopLeft="440,297" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\CAPITAL CASE"
+          TopLeft="440,162" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\READ FROM CSV"
+          TopLeft="433,44" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination"
+          TopLeft="446,681" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[ERROR AMOUNTS]"
+          TopLeft="814,445">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="278.5,141"
+              Start="0,0"
+              End="278.5,133.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.264367816092" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,53.264367816092"
+                    Point2="0,57.264367816092"
+                    Point3="4,57.264367816092" />
+                  <mssgle:LineSegment
+                    End="274.5,57.264367816092" />
+                  <mssgle:CubicBezierSegment
+                    Point1="274.5,57.264367816092"
+                    Point2="278.5,57.264367816092"
+                    Point3="278.5,61.264367816092" />
+                  <mssgle:LineSegment
+                    End="278.5,133.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="98.80251953125,62.264367816092,80.8949609375,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="514,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.5,93"
+              Start="0,0"
+              End="49.5,85.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.5"
+                    Point2="0,46.5"
+                    Point3="4,46.5" />
+                  <mssgle:LineSegment
+                    End="45.5,46.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.5,46.5"
+                    Point2="49.5,46.5"
+                    Point3="49.5,50.5" />
+                  <mssgle:LineSegment
+                    End="49.5,85.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="563.5,339">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="226,64"
+              Start="0,0"
+              End="226,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28"
+                    Point2="0,32"
+                    Point3="4,32" />
+                  <mssgle:LineSegment
+                    End="222,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="222,32"
+                    Point2="226,32"
+                    Point3="226,36" />
+                  <mssgle:LineSegment
+                    End="226,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Conditional Split Default Output]"
+          TopLeft="765,445">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-229.5,236"
+              Start="0,0"
+              End="-229.5,228.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,91.8467432950192" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,91.8467432950192"
+                    Point2="0,95.8467432950192"
+                    Point3="-4,95.8467432950192" />
+                  <mssgle:LineSegment
+                    End="-225.5,95.8467432950192" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-225.5,95.8467432950192"
+                    Point2="-229.5,95.8467432950192"
+                    Point3="-229.5,99.8467432950192" />
+                  <mssgle:LineSegment
+                    End="-229.5,228.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-185.36390625,100.846743295019,141.2278125,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="513.25,86">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76"
+              Start="0,0"
+              End="0,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Flat File Destination"
+          TopLeft="976,304" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Data Conversion Error Output]"
+          TopLeft="687,321.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="289,0"
+              Start="0,0"
+              End="281.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="281.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="74.66361328125,5,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
